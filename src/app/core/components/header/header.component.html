@@ -1,19 +1,40 @@
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="d-none d-md-block col-md-12  text-center">
-      <h4 class="website-font-name p-2">ALL ABOUT SPACE </h4>      
-    </div>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <!-- Container wrapper -->
+  <div class="container-fluid">
+    <!-- Navbar brand -->
+    <a class="navbar-brand d-none d-md-block website-font-name" href="#">ALL ABOUT SPACE</a>
     <!-- For smaller screen devices ( mobile) -->
-    <div class="d-md-none d-lg-none d-xl-none d-xxl-none col-12 text-center">      
-      <h4 class="website-font-name p-2">AAS</h4>
-    </div>
-  </div>
-</div>
+    <a class="navbar-brand d-md-none d-lg-none d-xl-none d-xxl-none website-font-name" href="#">AAS</a>
 
-<!-- <nav class="navbar navbar-dark bg-dark">
-    <div class="container-fluid">
-      <a class="navbar-brand website-font-name" href="#">ALL ABOUT SPACE</a>
+    <!-- Toggle button -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      (click)="basicNavbar.toggle()"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Collapsible wrapper -->
+    <div
+      class="collapse navbar-collapse"
+      id="navbarSupportedContent"
+      mdbCollapse
+      #basicNavbar="mdbCollapse"
+    >
+      <!-- Left links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item" *ngFor="let linkItem of linksList">          
+          <a routerLinkActive="active" [routerLink]="[linkItem.link]" class="nav-link" aria-current="page">{{ linkItem.visibleName }}</a>
+        </li>        
+      </ul>
+      <!-- Left links -->
     </div>
-  </nav> -->
-  
+    <!-- Collapsible wrapper -->
+  </div>
+  <!-- Container wrapper -->
+</nav>
+<!-- Navbar -->

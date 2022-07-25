@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 
@@ -22,6 +23,7 @@ import { AppComponent } from './app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -30,24 +32,11 @@ import { CoreModule } from './core/core.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    // MdbAccordionModule,
-    // MdbCarouselModule,
-    // MdbCheckboxModule,
-    // MdbCollapseModule,
-    // MdbDropdownModule,
-    // MdbFormsModule,
-    // MdbModalModule,
-    // MdbPopoverModule,
-    // MdbRadioModule,
-    // MdbRangeModule,
-    // MdbRippleModule,
-    // MdbScrollspyModule,
-    // MdbTabsModule,
-    // MdbTooltipModule,
-    // MdbValidationModule,
+    RouterModule,    
     
-    // Custom
-    CoreModule
+    // Custom Modules
+    CoreModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

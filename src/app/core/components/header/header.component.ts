@@ -12,4 +12,13 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public linksList:ILinks[]=[
+    {visibleName:"Home",link:"/" }
+  ]
+
+}
+
+interface ILinks{
+  visibleName:string,
+  link:string
 }
