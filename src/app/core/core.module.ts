@@ -20,6 +20,7 @@ import { BaseHttpService } from "./services/base-http.service";
 import { HeaderComponent } from './components/header/header.component';
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
+import { HttpClientModule } from "@angular/common/http";
 
 
 @NgModule({
@@ -34,11 +35,13 @@ import { RouterModule } from "@angular/router";
         HeaderComponent,
 
         //Common Core Modules
-        CommonModule,        
+        CommonModule, 
+        HttpClientModule
     ],
     imports:[       
         RouterModule,
-        CommonModule,        
+        CommonModule, 
+        HttpClientModule,       
 
         MdbAccordionModule,
         MdbCarouselModule,
