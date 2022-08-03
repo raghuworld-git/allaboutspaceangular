@@ -41,8 +41,8 @@ export class FavouriteAgencyComponent implements OnInit,OnDestroy {
       keyboard: false    
     }
     this.modelRef = this._modalService.open(AgencyModalComponent, config);
-    this.modelRef.onClose.subscribe((message)=>{
-        if(message != null || message != undefined || message!=""){
+    this.modelRef.onClose.subscribe((message)=>{      
+        if(message != undefined){
               this._localStorageService.setInfo({key:this.favouriteAgency,value:message});
         }
     });

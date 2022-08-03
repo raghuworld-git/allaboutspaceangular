@@ -1,4 +1,4 @@
-import { ILaunchStatus } from "./LaunchStatus.model";
+import { ILaunchStatus } from "./launchStatus.model";
 
 export interface ISimpleLaunch {
     slug:string;
@@ -9,6 +9,6 @@ export interface ISimpleLaunch {
     net:string;
     launchpad:string;
     agency:string;
-    launchStatus:ILaunchStatus; 
+    launchStatus:ILaunchStatus 
     launchStatusColor:string;   
 }

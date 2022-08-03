@@ -23,6 +23,7 @@ export class AgencyModalComponent implements OnInit,OnDestroy {
     ) { }
 
   ngOnInit(): void {
+    console.log(this.favouriteAgency,"in dataa");
     this.subscription = this._configService.getAgencyList()
     .subscribe((data)=>{
       this.agencyList = data;
