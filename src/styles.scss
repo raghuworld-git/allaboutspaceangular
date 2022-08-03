@@ -8,11 +8,17 @@
 body{
     background-color: #121212;
     color: #e2e2e2; 
+    font-family: 'Rubik', sans-serif ;
 }
 
 // This fontface is mainly used for Website Name
 @font-face {
     font-family: "Salvar";
     src: local("Salvar"), url(./assets/fonts/SalvarRegular-gxwoP.ttf) format("truetype");
+}
+
+// Setting up Background card component color as Grey for entire application
+.card,.modal-content{
+    background-color: #333131!important;
 }
 

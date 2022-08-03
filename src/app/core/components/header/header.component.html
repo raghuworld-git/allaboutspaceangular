@@ -27,9 +27,29 @@
     >
       <!-- Left links -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item" *ngFor="let linkItem of linksList">          
-          <a routerLinkActive="active" [routerLink]="[linkItem.link]" class="nav-link" aria-current="page">{{ linkItem.visibleName }}</a>
-        </li>        
+        <li class="nav-item">          
+          <a routerLinkActive="active" [routerLink]="['home']" class="nav-link" >Home</a>
+        </li>   
+        <li mdbDropdown class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"            
+            id="navbarDropdownMenuLink"
+            role="button"
+            mdbDropdownToggle
+            aria-expanded="false"
+            routerLinkActive="active"
+          >
+            Launches
+          </a>
+          <ul mdbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li>
+              <a class="dropdown-item" routerLinkActive="active" [routerLink]="['launches/upcoming']">Upcoming</a>
+            </li>
+            <li>
+              <a class="dropdown-item" routerLinkActive="active" [routerLink]="['launches/previous']">Previous</a>
+            </li>           
+          </ul>
+        </li>             
       </ul>
       <!-- Left links -->
     </div>

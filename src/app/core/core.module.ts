@@ -34,7 +34,7 @@ import { HttpClientModule } from "@angular/common/http";
         // Components
         HeaderComponent,
 
-        //Common Core Modules
+        //Common Core Built in Modules
         CommonModule, 
         HttpClientModule
     ],

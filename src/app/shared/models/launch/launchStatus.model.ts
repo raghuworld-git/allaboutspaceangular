@@ -1,6 +1,6 @@
-export interface ILaunchStatusModel {         
-        name:string,
-        abbrev:string,
-        description:string,
-        id:number,    
+export interface ILaunchStatus{
+    id:number;
+    name:string;
+    abbrev:string;
+    description:string;
 }

@@ -1,0 +1,17 @@
+<div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Select an agency</h5>
+      <button type="button" style="color: white;" class="btn-close" aria-label="Close" (click)="close()"></button>
+    </div>
+    <div class="modal-body">
+        <select #agencyDropdownRef>
+            <option *ngFor="let agency of agencyList" [value]="agency.id">
+                    {{ agency.name }}
+            </option>
+        </select>
+        {{ selectedAgency }}
+    </div>
+    <div class="modal-footer">     
+      <button type="button" class="btn btn-sm btn-outline-white" (click)="save()" >Save</button>
+    </div>
+  </div>

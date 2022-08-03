@@ -1,0 +1,17 @@
+<div  class="card">
+    <div data-test="card-body" class="card-body d-flex flex-column align-items-center justify-content-center cards-detail-height">
+        <p class="text-center"><u>{{ launchInfo?.name }}</u></p>
+        <h5 class="h4-responsive">
+            <app-countdown [finalDate]="launchInfo?.net"></app-countdown>            
+        </h5>
+        <p>
+            <i class="fa fa-calendar-day"></i> &nbsp; {{ launchInfo?.launchDate}}
+        </p>
+        <p><span  [ngClass]="['badge', 'badge-' + launchInfo?.launchStatusColor]">{{ launchInfo?.launchStatus?.name }}</span></p>
+        <p class="text-center"><i class="fa fa-map-marker-alt"></i> &nbsp; {{ launchInfo?.launchpad }}
+        </p>
+        <p class="text-center">Agency : {{ launchInfo?.agency}}</p>
+        <a class="btn btn-sm btn-outline-white" [routerLink]="['/launches',launchInfo?.slug]" >View details
+        </a>
+    </div>
+</div>
