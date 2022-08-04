@@ -4,6 +4,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { DashboardRoutingModule } from "./dashboard-routing.module";
 import { FavouriteAgencyComponent } from './components/favourite-agency/favourite-agency.component';
 import { AgencyModalComponent } from './components/agency-modal/agency-modal.component';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
     declarations:[
@@ -13,7 +14,8 @@ import { AgencyModalComponent } from './components/agency-modal/agency-modal.com
   ],
     imports:[
       DashboardRoutingModule,
-      SharedModule
+      SharedModule,
+      FormsModule
     ]
 })
 export class DashboardModule {

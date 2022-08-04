@@ -4,12 +4,12 @@
       <button type="button" style="color: white;" class="btn-close" aria-label="Close" (click)="close()"></button>
     </div>
     <div class="modal-body">
-        <select #agencyDropdownRef>
+        <select #agencyDropdownRef [ngModel]="favouriteAgency">
+          <option value="null" selected disabled>Select an agency</option>
             <option *ngFor="let agency of agencyList" [value]="agency.id">
                     {{ agency.name }}
             </option>
-        </select>
-        {{ selectedAgency }}
+        </select>                 
     </div>
     <div class="modal-footer">     
       <button type="button" class="btn btn-sm btn-outline-white" (click)="save()" >Save</button>

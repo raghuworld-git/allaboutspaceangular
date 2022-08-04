@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
 import { Subscription } from 'rxjs';
 import { IAgencyMini } from 'src/app/shared/models/agency/AgencyMini.model';
@@ -7,13 +7,14 @@ import { ConfigService } from 'src/app/shared/services/config.service';
 @Component({
   selector: 'app-agency-modal',
   templateUrl: './agency-modal.component.html',
-  styleUrls: ['./agency-modal.component.scss']
+  styleUrls: ['./agency-modal.component.scss'],
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class AgencyModalComponent implements OnInit,OnDestroy {
 
   favouriteAgency:string | null = null;
   agencyList : IAgencyMini[] = [];
-  selectedAgency:string;
+  
   @ViewChild('agencyDropdownRef') agencyDropdownRef!: ElementRef;
 
   private subscription!:Subscription;
@@ -22,8 +23,7 @@ export class AgencyModalComponent implements OnInit,OnDestroy {
               private _configService:ConfigService
     ) { }
 
-  ngOnInit(): void {
-    console.log(this.favouriteAgency,"in dataa");
+  ngOnInit(): void {    
     this.subscription = this._configService.getAgencyList()
     .subscribe((data)=>{
       this.agencyList = data;
