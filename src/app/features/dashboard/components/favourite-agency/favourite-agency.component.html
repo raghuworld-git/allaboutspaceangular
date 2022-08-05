@@ -1,11 +1,43 @@
 <div class="row mb-1">
     <div class="col">
-      <h5><span (click)="openModal()" style="color:red;cursor: pointer;"><i class="fas fa-heart"></i></span> Keep track of your favourite Agency
+      <h5>Watchout your favourite Agency &nbsp; <span (click)="openModal()" style="color:grey;cursor: pointer;"><i class="fas fa-cog"></i></span>
       </h5> 
     </div>                    
 </div>
 <div class="card">
-    <div class="card-body d-flex flex-column align-items-center justify-content-center">
-        Hit the love above to set your favourite.
+    <div class="card-header" style="text-align: center;">
+        {{ agencyDashboardInfo?.agencyName }}
     </div>
+    <div class="card-body">
+
+        <ng-container *ngIf="selectedAgency;else favouriteNotSet">
+            <!-- <div class="d-flex justify-content-between px-md-1">                
+                <div>
+                  <h3 class="text-danger">278</h3>
+                  <p class="mb-0">New Projects</p>
+                </div>
+                <div class="align-self-center">
+                  <i class="fas fa-rocket text-danger fa-3x"></i>
+                </div>
+              </div> -->             
+              <div class="row">
+                    <div class="col">
+                        <div class="text-center">
+                            <h2 class="h1 mb-0">{{ agencyDashboardInfo?.total_launch_count }}</h2>
+                            <p><strong>Total launches</strong></p>
+                          </div>
+                    </div>
+                    <div class="col">
+                        <div class="text-center">
+                            <h2 class="h1 mb-0">{{ agencyDashboardInfo?.successful_launches }}</h2>
+                            <p><strong>Successful Launches</strong></p>
+                          </div>
+                    </div>                    
+              </div>
+              
+        </ng-container>
+
+    
+        <ng-template #favouriteNotSet> Set your favourite Agency</ng-template>
+    </div>    
 </div>
