@@ -4,10 +4,10 @@
 @import '~@fortawesome/fontawesome-free/scss/regular.scss';
 @import '~@fortawesome/fontawesome-free/scss/brands.scss';
  @import '~mdb-angular-ui-kit/assets/scss/mdb.scss';
- 
+
 body{
     background-color: #121212;
-    color: #e2e2e2; 
+    color: #e2e2e2;
     font-family: 'Rubik', sans-serif ;
 }
 
@@ -18,7 +18,7 @@ body{
 }
 
 // Setting up Background card component color as Grey for entire application
-.card,.modal-content{
+.card,.modal-content,.grey-color{
     background-color: #333131!important;
 }
 

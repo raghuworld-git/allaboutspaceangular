@@ -1,22 +1,62 @@
-<div class="row g-0" style="background-color: #333131!important;">
-    <div class="d-none d-lg-block col-lg-5 " [style.background-image]="'url('+highLightLaunch?.image +')'"
-    style="height: 45vh;background-repeat: no-repeat;background-position: center;background-size: cover;border-radius: 10px 0 0 10px;"
-    ></div>
+<div class="row g-0" style="background-color: #333131 !important">
+  <div
+    class="d-none d-lg-block col-lg-5"
+    [style.background-image]="'url(' + highLightLaunch?.image + ')'"
+    style="
+      height: 45vh;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      border-radius: 10px 0 0 10px;
+    "
+  ></div>
 
-    <div class="d-lg-none col-12" [style.background-image]="'url('+highLightLaunch?.image +')'"
-    style="height: 45vh;background-repeat: no-repeat;background-position: center;background-size: contain;border-radius: 10px 0 0 10px;"
-    ></div>
+  <div
+    class="d-lg-none col-12"
+    [style.background-image]="'url(' + highLightLaunch?.image + ')'"
+    style="
+      height: 45vh;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      border-radius: 10px 0 0 10px;
+    "
+  ></div>
 
-    <div class="col-12 col-lg-7 d-flex flex-column justify-content-center p-2 text-center">
-      <h4>{{ highLightLaunch?.name }}</h4> <br/>
-      <h3><app-countdown [finalDate]="highLightLaunch?.net"></app-countdown></h3>
-      <p> <i class="fas fa-calendar-day"></i> &nbsp; {{ highLightLaunch?.launchDate }} </p>
-      <p>
-        <span title="Launch Status" [ngClass]="['badge','badge-'+highLightLaunch?.launchStatusColor]" > {{ highLightLaunch?.launchStatus?.name }} </span> &nbsp;
-        <span  title="Manned or Un-Manned launch" class="badge badge-info"> {{ highLightLaunch?.ismanned? "Manned":"Un-Manned" }} </span>
-      </p>
-      <p><i class="fas fa-map-marker-alt"></i> &nbsp; {{ highLightLaunch?.launchpad }}  </p>
-      <p>Agency : {{ highLightLaunch?.agency }} </p>
-      <p><a class="btn btn-white btn-outline-light btn-sm" [routerLink]="['/launches',highLightLaunch?.slug]">View details</a></p>
-    </div>
+  <div
+    class="col-12 col-lg-7 d-flex flex-column justify-content-center p-2 text-center"
+    style="height: 45vh"
+  >
+    <h4>{{ highLightLaunch?.name }}</h4>
+    <br />
+    <h3><app-countdown [finalDate]="highLightLaunch?.net"></app-countdown></h3>
+    <p>
+      <i class="fas fa-calendar-day"></i> &nbsp;
+      {{ highLightLaunch?.launchDate }}
+    </p>
+    <p>
+      <span
+        title="Launch Status"
+        [ngClass]="['badge', 'badge-' + highLightLaunch?.launchStatusColor]"
+      >
+        {{ highLightLaunch?.launchStatus?.name }}
+      </span>
+      &nbsp;
+      <span title="Manned or Un-Manned launch" class="badge badge-info">
+        {{ highLightLaunch?.ismanned ? "Manned" : "Un-Manned" }}
+      </span>
+    </p>
+    <p>
+      <i class="fas fa-map-marker-alt"></i> &nbsp;
+      {{ highLightLaunch?.launchpad }}
+    </p>
+    <p>Agency : {{ highLightLaunch?.agency }}</p>
+    <p>
+      <a
+        class="btn btn-white btn-outline-light btn-sm grey-color"
+        [routerLink]="['/launches', highLightLaunch?.slug]"
+        >View details</a
+      >
+    </p>
+  </div>
 </div>

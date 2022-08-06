@@ -3,9 +3,15 @@
   <!-- Container wrapper -->
   <div class="container-fluid">
     <!-- Navbar brand -->
-    <a class="navbar-brand d-none d-md-block website-font-name" href="#">ALL ABOUT SPACE</a>
+    <a class="navbar-brand d-none d-md-block website-font-name" href="#"
+      >ALL ABOUT SPACE</a
+    >
     <!-- For smaller screen devices ( mobile) -->
-    <a class="navbar-brand d-md-none d-lg-none d-xl-none d-xxl-none website-font-name" href="#">AAS</a>
+    <a
+      class="navbar-brand d-md-none d-lg-none d-xl-none d-xxl-none website-font-name"
+      href="#"
+      >AAS</a
+    >
 
     <!-- Toggle button -->
     <button
@@ -27,12 +33,14 @@
     >
       <!-- Left links -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">          
-          <a routerLinkActive="active" [routerLink]="['home']" class="nav-link" >Home</a>
-        </li>   
+        <li class="nav-item">
+          <a routerLinkActive="active" [routerLink]="['home']" class="nav-link"
+            >Home</a
+          >
+        </li>
         <li mdbDropdown class="nav-item dropdown">
           <a
-            class="nav-link dropdown-toggle"            
+            class="nav-link dropdown-toggle"
             id="navbarDropdownMenuLink"
             role="button"
             mdbDropdownToggle
@@ -41,15 +49,34 @@
           >
             Launches
           </a>
-          <ul mdbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <ul
+            mdbDropdownMenu
+            class="dropdown-menu"
+            aria-labelledby="navbarDropdownMenuLink"
+          >
             <li>
-              <a class="dropdown-item" routerLinkActive="active" [routerLink]="['launches/upcoming']">Upcoming</a>
+              <a
+                class="dropdown-item"
+                routerLinkActive="active"
+                [routerLink]="['launches/upcoming']"
+                >Upcoming</a
+              >
             </li>
             <li>
-              <a class="dropdown-item" routerLinkActive="active" [routerLink]="['launches/previous']">Previous</a>
-            </li>           
+              <a
+                class="dropdown-item"
+                routerLinkActive="active"
+                [routerLink]="['launches/previous']"
+                >Previous</a
+              >
+            </li>
           </ul>
-        </li>             
+        </li>
+        <li class="nav-item">
+          <a routerLinkActive="active" [routerLink]="['agencies']" class="nav-link"
+            >Agencies</a
+          >
+        </li>
       </ul>
       <!-- Left links -->
     </div>
