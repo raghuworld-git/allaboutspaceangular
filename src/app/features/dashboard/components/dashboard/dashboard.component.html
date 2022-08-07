@@ -1,1 +1,18 @@
-<app-highlighted-launch *ngIf="highLightLaunch!=null" [highLightLaunch]="highLightLaunch" ></app-highlighted-launch>
+<div class="continer-fluid">
+  <mdb-carousel *ngIf="articles.length>0" [controls]="true" [indicators]="true" [animation]="'fade'" >
+
+    <mdb-carousel-item *ngFor="let item of articles">
+      <img
+        [src]="item?.imageUrl"
+        class="d-block w-100"
+        [alt]="item?.title"
+      />
+      <a [routerLink]="['/article',item?.id]">
+      <div class="carousel-caption d-none d-md-block" style="background-color: rgba(0, 0, 0, 0.6);">
+        <h5> {{ item?.title }} </h5>
+        <p> {{item?.summary }}</p>
+      </div>
+    </a>
+    </mdb-carousel-item>
+  </mdb-carousel>
+</div>

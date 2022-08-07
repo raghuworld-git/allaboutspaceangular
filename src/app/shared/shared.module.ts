@@ -2,12 +2,10 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { CountdownComponent } from './components/countdown/countdown.component';
-import { HighlightedLaunchComponent } from './components/highlighted-launch/highlighted-launch.component';
 
 @NgModule({
     declarations:[
-        CountdownComponent,
-        HighlightedLaunchComponent
+        CountdownComponent
     ],
     imports:[
         CommonModule,
@@ -15,7 +13,6 @@ import { HighlightedLaunchComponent } from './components/highlighted-launch/high
     ],
     exports:[
         CountdownComponent,
-        HighlightedLaunchComponent,
         CommonModule
     ]
 })

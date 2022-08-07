@@ -1,8 +1,9 @@
 import { Injectable } from "@angular/core";
-import { map, Observable } from "rxjs";
+import { map, Observable, take } from "rxjs";
 import { BaseHttpService } from "src/app/core/services/base-http.service";
 import { IAgencyDashboardInfo } from "src/app/shared/models/agency/AgencyDashboardInfo";
 import { ISimpleLaunch } from "src/app/shared/models/launch/SimpleLaunch.model";
+import { IArticle } from "src/app/shared/models/news/article.model";
 import { LaunchUtilService } from "src/app/shared/services/launchUtil.service";
 
 @Injectable({
@@ -12,8 +13,9 @@ export class DashboardService {
 
     constructor(private baseHttpService: BaseHttpService,private launchUtilService:LaunchUtilService) { }
 
-    private launchesEndPoint: string = 'Launches';    
-    private agencyEndPoint: string = 'Agency';        
+    private launchesEndPoint: string = 'Launches';
+    private agencyEndPoint: string = 'Agency';
+    private newsEndPoint: string = 'News';
 
     getTopUpcomingLaunches(spaceAgency: string | null = null): Observable<ISimpleLaunch[]> {
         return this.baseHttpService.get<ISimpleLaunch[]>(`${this.launchesEndPoint}/GetTopUpcomingLaunches`).pipe(map((res)=>{
@@ -26,5 +28,8 @@ export class DashboardService {
     getAgencyDashboardInfoByAgencyId(agencyId:string){
         return this.baseHttpService.get<IAgencyDashboardInfo>(`${this.agencyEndPoint}/GetAgencyDetailsForDashboardById/${agencyId}`);
     }
-   
+
+    getNewsArticles():Observable<IArticle[]>{
+        return this.baseHttpService.get<IArticle[]>(`${this.newsEndPoint}/GetArticles`).pipe(take(3));
+    }
 }

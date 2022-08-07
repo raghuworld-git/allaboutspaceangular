@@ -5,6 +5,7 @@ import { DashboardRoutingModule } from "./dashboard-routing.module";
 import { FavouriteAgencyComponent } from './components/favourite-agency/favourite-agency.component';
 import { AgencyModalComponent } from './components/agency-modal/agency-modal.component';
 import { FormsModule } from "@angular/forms";
+import { MdbCarouselModule } from "mdb-angular-ui-kit/carousel";
 
 @NgModule({
     declarations:[
@@ -15,7 +16,8 @@ import { FormsModule } from "@angular/forms";
     imports:[
       DashboardRoutingModule,
       SharedModule,
-      FormsModule
+      FormsModule,
+      MdbCarouselModule
     ]
 })
 export class DashboardModule {

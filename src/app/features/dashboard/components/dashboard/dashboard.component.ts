@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, DoCheck, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { ISimpleLaunch } from 'src/app/shared/models/launch/SimpleLaunch.model';
+import { IArticle } from 'src/app/shared/models/news/article.model';
 import { DashboardService } from '../../services/dashboard.service';
 
 @Component({
@@ -18,13 +19,13 @@ export class DashboardComponent implements OnInit,OnDestroy,DoCheck {
   private dashboardServiceSubs!: Subscription;
   simplelaunches:ISimpleLaunch[]=[];
   highLightLaunch:ISimpleLaunch;
+  articles:IArticle[]=[];
 
   ngOnInit(): void {
-     this.dashboardServiceSubs =  this.dashboardService.getTopUpcomingLaunches()
+     this.dashboardServiceSubs =  this.dashboardService.getNewsArticles()
       .subscribe(
-        data=>{            
-            this.highLightLaunch = data[0];
-            this.simplelaunches = data.slice(1);          
+        data=>{
+            this.articles = data;
         }
       );
   }

@@ -1,0 +1,24 @@
+<div class="row m-0 p-0 text-white" style="background-color: yellow">
+  <div class="col-12 my-2">
+    <div class="container">
+      <a [routerLink]="['launches', nextlaunch?.slug]">
+        <span style="word-spacing: 2px; letter-spacing: 2px">
+          Next launch is in :
+        </span>
+        <span style="letter-spacing: 2px">
+          <app-countdown
+            *ngIf="nextlaunch?.net != null; else nextlaunchCountDown"
+            [finalDate]="nextlaunch?.net"
+          ></app-countdown>
+        </span>
+        <ng-template #nextlaunchCountDown> &nbsp; Launching in... </ng-template>
+        &nbsp;
+        <span class="d-none d-lg-inline">
+          <span class="vr" style="opacity: 1"></span>
+          &nbsp;
+          {{ nextlaunch?.name }}
+        </span>
+      </a>
+    </div>
+  </div>
+</div>

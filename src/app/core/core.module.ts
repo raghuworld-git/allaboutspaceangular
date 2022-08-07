@@ -21,6 +21,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { HttpClientModule } from "@angular/common/http";
+import { HighlightLaunchComponent } from "./components/highlight-launch/highlight-launch.component";
+import { SharedModule } from "../shared/shared.module";
 
 
 @NgModule({
@@ -28,37 +30,28 @@ import { HttpClientModule } from "@angular/common/http";
         BaseHttpService
     ],
     declarations: [
-      HeaderComponent
+      HeaderComponent,
+      HighlightLaunchComponent,
     ],
     exports:[
         // Components
         HeaderComponent,
+        HighlightLaunchComponent,
 
         //Common Core Built in Modules
-        CommonModule, 
-        HttpClientModule
-    ],
-    imports:[       
-        RouterModule,
-        CommonModule, 
-        HttpClientModule,       
+        CommonModule,
+        HttpClientModule,
 
-        MdbAccordionModule,
-        MdbCarouselModule,
-        MdbCheckboxModule,
+    ],
+    imports:[
+        RouterModule,
+        CommonModule,
+        HttpClientModule,
         MdbCollapseModule,
         MdbDropdownModule,
-        MdbFormsModule,
-        MdbModalModule,
-        MdbPopoverModule,
-        MdbRadioModule,
-        MdbRangeModule,
-        MdbRippleModule,
-        MdbScrollspyModule,
-        MdbTabsModule,
-        MdbTooltipModule,
-        MdbValidationModule
-    ]    
+
+        SharedModule
+    ]
 })
 export class CoreModule {
     constructor(@Optional() @SkipSelf() core: CoreModule) {

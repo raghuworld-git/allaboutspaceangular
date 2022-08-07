@@ -1,4 +1,8 @@
-.list-group-item{
- background-color: #444141!important;
- color: white;
+img,.carousel-inner,
+          .carousel-item,
+          .carousel-item.active {
+            height: 50vh;
+          }
+img {
+  object-fit: cover;
 }

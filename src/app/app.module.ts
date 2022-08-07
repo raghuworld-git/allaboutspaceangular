@@ -11,12 +11,12 @@ import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent,    
+    AppComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule,         
+    RouterModule,
 
     // Custom Modules
     CoreModule,
