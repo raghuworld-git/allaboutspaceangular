@@ -38,7 +38,7 @@
             >Home</a
           >
         </li>
-        <li mdbDropdown class="nav-item dropdown">
+        <!-- <li mdbDropdown class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
             id="navbarDropdownMenuLink"
@@ -71,10 +71,30 @@
               >
             </li>
           </ul>
+        </li> -->
+        <li class="nav-item">
+          <a routerLinkActive="active" [routerLink]="['launches']" class="nav-link"
+            >Launches</a
+          >
         </li>
         <li class="nav-item">
           <a routerLinkActive="active" [routerLink]="['agencies']" class="nav-link"
             >Agencies</a
+          >
+        </li>
+        <li class="nav-item">
+          <a routerLinkActive="active" [routerLink]="['news']" class="nav-link"
+            >News</a
+          >
+        </li>
+        <li class="nav-item">
+          <a routerLinkActive="active" [routerLink]="['blogs']" class="nav-link"
+            >Blogs</a
+          >
+        </li>
+        <li class="nav-item">
+          <a routerLinkActive="active" [routerLink]="['resports']" class="nav-link"
+            >Reports</a
           >
         </li>
       </ul>

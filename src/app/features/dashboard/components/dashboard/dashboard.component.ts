@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit,OnDestroy,DoCheck {
   articles:IArticle[]=[];
 
   ngOnInit(): void {
-     this.dashboardServiceSubs =  this.dashboardService.getNewsArticles()
+     this.dashboardServiceSubs =  this.dashboardService.GetTopNewsFromAllCategories()
       .subscribe(
         data=>{
             this.articles = data;

@@ -29,7 +29,7 @@ export class DashboardService {
         return this.baseHttpService.get<IAgencyDashboardInfo>(`${this.agencyEndPoint}/GetAgencyDetailsForDashboardById/${agencyId}`);
     }
 
-    getNewsArticles():Observable<IArticle[]>{
-        return this.baseHttpService.get<IArticle[]>(`${this.newsEndPoint}/GetArticles`).pipe(take(3));
+    GetTopNewsFromAllCategories():Observable<IArticle[]>{
+        return this.baseHttpService.get<IArticle[]>(`${this.newsEndPoint}/GetTopNewsFromAllCategories`);
     }
 }
