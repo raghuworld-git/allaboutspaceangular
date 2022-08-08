@@ -1,0 +1,11 @@
+<div class="card border border-light shadow-3-strong h-100">
+  <img [src]="item?.imageUrl" [alt]="item?.title" style="height: 250px;object-fit: cover;" class="card-img-top w-100"/>
+    <div class="card-body">
+       <p class="card-text">
+        {{ item?.title }}
+       </p>
+      <p>
+        <i class="far fa-clock"></i> : {{ item?.publishedAt | showDateOnly }} &nbsp; <span class="badge bg-danger"> Source: {{item?.newsSite}}</span>
+      </p>
+    </div>
+</div>

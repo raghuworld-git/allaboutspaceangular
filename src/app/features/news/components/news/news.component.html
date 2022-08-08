@@ -1,0 +1,11 @@
+<div class="container">
+  <h3 class="display-3"> News  </h3>
+  <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 g-4">
+      <div class="col" *ngFor="let item of news">
+        <a [href]="item?.url" target="_blank" style="text-decoration: none;color:black">
+            <app-simple-card [item]="item"></app-simple-card>
+        </a>
+      </div>
+  </div>
+</div>
+

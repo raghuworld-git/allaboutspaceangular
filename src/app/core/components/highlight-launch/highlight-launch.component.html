@@ -11,9 +11,11 @@
             [finalDate]="nextlaunch?.net"
           ></app-countdown>
         </span>
+
         <ng-template #nextlaunchCountDown> &nbsp; Launching in... </ng-template>
+
         &nbsp;
-        <span class="d-none d-lg-inline">
+        <span *ngIf="nextlaunch?.net != null;" class="d-none d-lg-inline">
           <span class="vr" style="opacity: 1"></span>
           &nbsp;
           {{ nextlaunch?.name }}

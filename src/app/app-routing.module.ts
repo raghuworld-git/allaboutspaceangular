@@ -16,6 +16,10 @@ const routes: Routes = [
     loadChildren: () => import('./features/agencies/agencies.module').then(m => m.AgenciesModule)
   },
   {
+    path: 'news',
+    loadChildren: () => import('./features/news/news.module').then(m => m.NewsModule)
+  },
+  {
     path: '', pathMatch: 'full'
     , redirectTo: '/home'
   }
