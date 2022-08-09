@@ -20,6 +20,14 @@ const routes: Routes = [
     loadChildren: () => import('./features/news/news.module').then(m => m.NewsModule)
   },
   {
+    path: 'blogs',
+    loadChildren: () => import('./features/blogs/blogs.module').then(m => m.BlogsModule)
+  },
+  {
+    path: 'reports',
+    loadChildren: () => import('./features/reports/reports.module').then(m => m.ReportModule)
+  },
+  {
     path: '', pathMatch: 'full'
     , redirectTo: '/home'
   }

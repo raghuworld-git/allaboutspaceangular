@@ -6,17 +6,14 @@ import { IArticle } from "src/app/shared/models/news/article.model";
 @Injectable({
   providedIn: 'root'
 })
-export class NewsService {
+export class ReportsService {
   constructor(private baseHttpService: BaseHttpService) { }
 
   private newsEndPoint: string = 'News';
 
-  getNews():Observable<IArticle[]> {
-    return this.baseHttpService.get<IArticle[]>(`${this.newsEndPoint}/GetArticles`);
+  getReports():Observable<IArticle[]> {
+    return this.baseHttpService.get<IArticle[]>(`${this.newsEndPoint}/GetReports`);
   }
 
-  getNewsById(id:string):Observable<IArticle> {
-    return this.baseHttpService.get<IArticle>(`${this.newsEndPoint}/GetArticleById/${id}`);
-  }
 
 }
