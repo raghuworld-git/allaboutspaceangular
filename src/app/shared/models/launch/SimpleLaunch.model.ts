@@ -1,4 +1,5 @@
 import { ILaunchStatus } from "./launchStatus.model";
+import { IMission } from "./mission.model";
 
 export interface ISimpleLaunch {
     slug:string;
@@ -9,6 +10,7 @@ export interface ISimpleLaunch {
     net:string;
     launchpad:string;
     agency:string;
-    launchStatus:ILaunchStatus 
-    launchStatusColor:string;   
+    status:ILaunchStatus
+    launchStatusColor:string;
+    mission:IMission;
 }

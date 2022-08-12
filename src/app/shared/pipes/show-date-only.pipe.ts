@@ -9,7 +9,7 @@ export class ShowDateOnlyPipe implements PipeTransform {
 
     if(dayjs(value).isValid()){
 
-      return dayjs(value).format('MMM DD,YYYY');
+      return dayjs(value).format('MMM DD,YYYY hh:mm:ss A');
     }
     return '';
   }

@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 mt-2">
+      <div class="form-check form-switch">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="flexSwitchCheckChecked"
+          checked
+          (change)="onLaunchesSwtichToggle($event)"
+        />
+        <label class="form-check-label" for="flexSwitchCheckChecked"
+          >{{ this.launchesDynamicDisplayText }} Launches</label
+        >
+      </div>
+    </div>
+  </div>
+  <a class="row my-2 bg-light launch-border" *ngFor="let launch of launchList" [routerLink]="['/launches',launch.slug]">
+    <div class="col-12 col-md-7 d-flex mb-2 flex-column align-self-center">
+      <p class="fs-5"><i class="fas fa-calendar-day"></i> &nbsp; {{ launch.net | showDateOnly }}</p>
+      <p class="fs-5">
+        {{ launch.mission?.description }}
+      </p>
+      <div class="fs-5">
+        <span class="badge badge-secondary">
+          {{ launch.ismanned ? "Manned" : "Un-Manned" }}</span
+        >
+        &nbsp;
+        <span *ngIf="launch.mission" class="badge badge-info"> {{ launch.mission?.type }}</span> &nbsp;
+        <span [ngClass]="['badge','badge-'+launch.launchStatusColor]"> {{ launch.status.name }}</span>
+      </div>
+    </div>
+    <div class="col-12 col-md-5">
+      <figure>
+        <img
+          [src]="launch.image"
+          style="
+            object-fit: cover !important;
+            height: 300px !important;
+            width: 100% !important;
+          "
+          class="figure-img rounded shadow-3 mb-3"
+          [alt]="launch.name"
+        />
+        <figcaption class="figure-caption text-center">
+          {{ launch.name }}
+        </figcaption>
+      </figure>
+    </div>
+  </a>
+</div>

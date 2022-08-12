@@ -1,20 +1,17 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { LaunchesDetailsComponent } from "./components/launches-details/launches-details.component";
-import { PreviousComponent } from "./components/previous/previous.component";
-import { UpcomingComponent } from "./components/upcoming/upcoming.component";
+import { LaunchesComponent } from "./components/launches/launches.component";
 
 
-const routes:Routes=[       
+
+const routes:Routes=[
             {
-                path:"upcoming",component:UpcomingComponent
+                path:"",component:LaunchesComponent
             },
             {
-                path:"previous",component:PreviousComponent
-            } ,
-            {
                 path:":slug",component:LaunchesDetailsComponent
-            }        
+            }
 ];
 
 @NgModule({
