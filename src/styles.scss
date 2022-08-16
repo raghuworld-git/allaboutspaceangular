@@ -19,6 +19,9 @@ body{
     src: local("Salvar"), url(./assets/fonts/SalvarRegular-gxwoP.ttf) format("truetype");
 }
 
+.bg-yellow{
+  background-color: yellow !important;
+}
 // Setting up Background card component color as Grey for entire application
 // .card,.modal-content,.grey-color{
 //     background-color: #333131!important;

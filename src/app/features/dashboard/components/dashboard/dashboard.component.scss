@@ -1,8 +1,12 @@
 img,.carousel-inner,
           .carousel-item,
           .carousel-item.active {
-            height: 60vh;
+            height: 400px;
           }
 img {
   object-fit: cover;
 }
+  a {
+    text-decoration: none;
+    color: black;
+  }

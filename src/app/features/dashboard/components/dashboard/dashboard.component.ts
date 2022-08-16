@@ -8,30 +8,38 @@ import { DashboardService } from '../../services/dashboard.service';
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
-  })
-export class DashboardComponent implements OnInit,OnDestroy,DoCheck {
+})
+export class DashboardComponent implements OnInit, OnDestroy, DoCheck {
 
-  constructor(private dashboardService:DashboardService) { }
+  constructor(private dashboardService: DashboardService) { }
   ngDoCheck(): void {
     // console.log(" Dashboard COmponent - DoCheck  ");
   }
 
   private dashboardServiceSubs!: Subscription;
-  simplelaunches:ISimpleLaunch[]=[];
-  highLightLaunch:ISimpleLaunch;
-  articles:IArticle[]=[];
+  private nextlaunchServiceSubs!: Subscription;
+
+  highLightLaunch: ISimpleLaunch | null;
+  articles: IArticle[] = [];
 
   ngOnInit(): void {
-     this.dashboardServiceSubs =  this.dashboardService.GetTopNewsFromAllCategories()
+    this.dashboardServiceSubs = this.dashboardService.GetTopNewsFromAllCategories()
       .subscribe(
-        data=>{
-            this.articles = data;
+        data => {
+          this.articles = data;
+        }
+      );
+
+    this.nextlaunchServiceSubs = this.dashboardService.getNextLaunch()
+      .subscribe(
+        data => {
+          this.highLightLaunch = data;
         }
       );
   }
 
 
-  ngOnDestroy():void{
-      this.dashboardServiceSubs?.unsubscribe();
+  ngOnDestroy(): void {
+    this.dashboardServiceSubs?.unsubscribe();
   }
 }

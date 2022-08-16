@@ -25,6 +25,10 @@ export class DashboardService {
         }));
     }
 
+    getNextLaunch(): Observable<ISimpleLaunch> {
+      return this.baseHttpService.get<ISimpleLaunch>(`${this.launchesEndPoint}/GetNextLaunch`);
+      };
+
     getAgencyDashboardInfoByAgencyId(agencyId:string){
         return this.baseHttpService.get<IAgencyDashboardInfo>(`${this.agencyEndPoint}/GetAgencyDetailsForDashboardById/${agencyId}`);
     }

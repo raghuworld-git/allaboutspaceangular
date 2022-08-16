@@ -1,19 +1,45 @@
-<div class="continer-fluid">
-  <mdb-carousel *ngIf="articles.length>0" [controls]="true" [indicators]="true" [animation]="'fade'" >
+<div class="container-fluid">
+  <div class="row">
+    <div
+      class="col-12 col-lg-6 d-flex flex-column align-items-center justify-content-center bg-yellow"
+      style="min-height: 300px"
+    >
+      <ng-container *ngIf="highLightLaunch.net != null">
+        <a [routerLink]="['/launches', highLightLaunch?.slug]">
+          <p class="display-5">
+            <app-countdown [finalDate]="highLightLaunch?.net"></app-countdown>
+          </p>
 
-    <mdb-carousel-item *ngFor="let item of articles">
-      <img
-        [src]="item?.imageUrl"
-        class="d-block w-100"
-        [alt]="item?.title"
-      />
-      <a  [href]="item?.url" target="_blank">
-      <div class="carousel-caption" style="background-color: rgba(0, 0, 0, 0.6);">
-        <h5> {{ item?.title }} </h5>
-        <p class="text-truncate"> {{item?.summary }}</p>
-        <span class="badge bg-danger"> {{ item?.articleType | titlecase }} </span> &nbsp; <span class="badge bg-danger">Source: {{ item.newsSite }}</span>
-      </div>
-    </a>
-    </mdb-carousel-item>
-  </mdb-carousel>
+          <p class="fs-4 text-truncate">{{ highLightLaunch?.name }}</p>
+        </a>
+      </ng-container>
+    </div>
+
+    <div class="d-none d-lg-block col-lg-6 g-0">
+      <mdb-carousel
+        *ngIf="articles.length > 0"
+        [controls]="true"
+        [indicators]="true"
+        [animation]="'fade'"
+      >
+        <mdb-carousel-item *ngFor="let item of articles">
+          <img [src]="item?.imageUrl" class="w-100" [alt]="item?.title" />
+          <a [href]="item?.url" target="_blank">
+            <div
+              class="carousel-caption"
+              style="background-color: rgba(0, 0, 0, 0.6)"
+            >
+              <h5>{{ item?.title }}</h5>
+              <p class="text-truncate">{{ item?.summary }}</p>
+              <span class="badge bg-danger">
+                {{ item?.articleType | titlecase }}
+              </span>
+              &nbsp;
+              <span class="badge bg-danger">Source: {{ item.newsSite }}</span>
+            </div>
+          </a>
+        </mdb-carousel-item>
+      </mdb-carousel>
+    </div>
+  </div>
 </div>
