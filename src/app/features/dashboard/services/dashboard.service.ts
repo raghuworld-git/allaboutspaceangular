@@ -37,7 +37,7 @@ export class DashboardService {
 
     getPastMonthLaunchStats(): Observable<ILaunchStats[]> {
         let pastMonthDateTime = dayjs().subtract(1, 'month');
-        return this.baseHttpService.get<ILaunchStats[]>(`${this.launchesEndPoint}/GetStatsOfPastlaunchesByMonth?month=${pastMonthDateTime.month() + 1}&year=${pastMonthDateTime.year()}&isUpcoming=false`).pipe(map(data => {
+        return this.baseHttpService.get<ILaunchStats[]>(`${this.launchesEndPoint}/GetStatsOfPastlaunchesByMonth?month=${pastMonthDateTime.month() + 1}&year=${pastMonthDateTime.year()}`).pipe(map(data => {
            return data.map(
                data=>{
                    return {...data,color:this.launchUtilService.getStatColor(data.title)}
