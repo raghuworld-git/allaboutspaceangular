@@ -22,7 +22,7 @@ export class BaseHttpService {
                 paramsString+=`&${item.name}=${item.value}`
             }                       
         });
-        return this.httpClient.get<T>(`${this.APIUrl}/${action}/${paramsString}`)
+        return this.httpClient.get<T>(`${this.APIUrl}/${action}${paramsString=="" ? "":'/'+{paramsString}}`)
         .pipe(
             catchError(this.handleError)
         );

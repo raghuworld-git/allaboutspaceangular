@@ -1,7 +1,14 @@
-<div class="container">
-  <div class="row">
+<div class="container mt-1">
+  <div class="row g-2">
     <div
-      class="col-12 col-lg-6 d-flex text-white flex-column justify-content-center text-center"
+      class="
+        col-12 col-lg-6
+        d-flex
+        text-white
+        flex-column
+        justify-content-center
+        text-center
+      "
       style="
         min-height: 200px;
         background-image: url('/assets/images/space.jpg');
@@ -21,39 +28,40 @@
         </p>
 
         <p class="fs-4 text-truncate">{{ highLightLaunch?.name }}</p>
+        <a
+          class="btn btn-sm text-white"
+          [routerLink]="['/launches', highLightLaunch?.slug]"
+          >For details</a
+        >
       </ng-template>
     </div>
 
     <div
-      class="col-12 col-lg-6 d-flex text-white flex-column justify-content-center text-center bg-yellow text-black"
+      class="
+        col-12 col-lg-6
+        d-flex
+        text-white
+        flex-column
+        justify-content-center
+        text-center
+        bg-yellow
+        text-black
+      "
     >
       <div class="text-center">
-        <h5 class="my-2 h5">Launch stats for July 2022</h5>
+        <h4 class="my-2">
+          Launch stats for {{ launchUtilService.getLastMonthName() }}
+          {{ launchUtilService.getLastYear() }}
+        </h4>
       </div>
       <hr />
       <div class="row">
-        <div class="col">
+        <div class="col" *ngFor="let stat of launchStats">
           <div class="text-center">
-            <h3 class="h3">465</h3>
-            <p><strong>Total</strong></p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="text-center">
-            <h3 class="h3">465</h3>
-            <p><strong>Success</strong></p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="text-center">
-            <h3 class="h3">465</h3>
-            <p><strong>Failed</strong></p>
-          </div>
-        </div>
-        <div class="col">
-          <div class="text-center">
-            <h3 class="h3">465</h3>
-            <p><strong>Crewed</strong></p>
+            <h3 class="h3">{{ stat.value }}</h3>
+            <p [ngClass]="['text-' + stat.color]">
+              <strong> {{ stat.title | titlecase }}</strong>
+            </p>
           </div>
         </div>
       </div>
