@@ -10,7 +10,7 @@ export interface ISimpleLaunch {
     net:string;
     launchpad:string;
     agency:string;
-    status:ILaunchStatus
+    launchStatus:ILaunchStatus
     launchStatusColor:string;
     mission:IMission;
 }

@@ -22,7 +22,7 @@ export class DashboardService {
     getTopUpcomingLaunches(spaceAgency: string | null = null): Observable<ISimpleLaunch[]> {
         return this.baseHttpService.get<ISimpleLaunch[]>(`${this.launchesEndPoint}/GetTopUpcomingLaunches`).pipe(map((res) => {
             return res.map((value) => {
-                return { ...value, launchStatusColor: this.launchUtilService.getBadgeColor(value.status?.abbrev) }
+                return { ...value, launchStatusColor: this.launchUtilService.getBadgeColor(value.launchStatus?.abbrev) }
             })
         }));
     }

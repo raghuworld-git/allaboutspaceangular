@@ -24,7 +24,7 @@ export class LaunchesService {
 
       return this.baseHttpService.get<IResult<ISimpleLaunch>>(`${this.launchesEndPoint}/GetUpcomingLaunches`).pipe(map((res) => {
         return res.results.map((value) => {
-          return { ...value, launchStatusColor: this.launchUtilService.getBadgeColor(value.status?.abbrev) }
+          return { ...value, launchStatusColor: this.launchUtilService.getBadgeColor(value.launchStatus?.abbrev) }
         })
       }));
 
@@ -32,7 +32,7 @@ export class LaunchesService {
     else {
       return this.baseHttpService.get<IResult<ISimpleLaunch>>(`${this.launchesEndPoint}/GetPreviousLaunches`).pipe(map((res) => {
         return res.results.map((value) => {
-          return { ...value, launchStatusColor: this.launchUtilService.getBadgeColor(value.status?.abbrev) }
+          return { ...value, launchStatusColor: this.launchUtilService.getBadgeColor(value.launchStatus?.abbrev) }
         })
       }));
 

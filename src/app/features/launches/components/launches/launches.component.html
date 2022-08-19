@@ -31,19 +31,22 @@
         />
       </div>
       <div
-        class="col-12 col-md-7 d-flex flex-column justify-content-center my-2"
+        class="col-12 col-md-7 d-flex flex-column justify-content-center"
       >
-        <p class="h6">
+        <p class="h6 ms-3 mt-3">
           <b>{{ launch?.name }} </b>
         </p>
-        <p>
+        <p class=" ms-3">
+         <b>Agency : </b> {{ launch.agency }}
+        </p>
+        <p class=" ms-3">
           <i class="fas fa-calendar-day"></i> &nbsp;
           {{ launch.net | showDateOnly }}
+        </p>       
+        <p class=" ms-3">
+          <i class="fas fa-map-marker-alt"></i> &nbsp;  {{ launch.launchpad }}
         </p>
-        <p>
-          {{ launch.mission?.description }}
-        </p>
-        <div>
+        <div class=" ms-3">
           <span class="badge badge-secondary">
             {{ launch.ismanned ? "Manned" : "Un-Manned" }}</span
           >
@@ -53,7 +56,7 @@
           >
           &nbsp;
           <span [ngClass]="['badge', 'badge-' + launch.launchStatusColor]">
-            {{ launch.status.name }}</span
+            {{ launch.launchStatus?.name }}</span
           >
         </div>
       </div>

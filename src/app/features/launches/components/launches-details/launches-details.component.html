@@ -1,3 +1,9 @@
-<div>
-
+<div class="container-fluid bg-yellow">
+  <h1 class="display-1" style="font-size: 15vh; letter-spacing: 10px">
+    <app-countdown
+      *ngIf="launchDetail?.net != null; else countDownElseRef"
+      [finalDate]="launchDetail?.net"
+    ></app-countdown>
+    <ng-template #countDownElseRef> Counting... </ng-template>
+  </h1>
 </div>
