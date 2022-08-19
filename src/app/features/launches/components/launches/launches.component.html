@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="row">
+  <div class="row pb-2">
     <div class="col-12 mt-2">
       <div class="form-check form-switch">
         <input
@@ -16,37 +16,48 @@
       </div>
     </div>
   </div>
-  <a class="row my-2 bg-light launch-border" *ngFor="let launch of launchList" [routerLink]="['/launches',launch.slug]">
-    <div class="col-12 col-md-7 d-flex mb-2 flex-column align-self-center">
-      <p class="fs-5"><i class="fas fa-calendar-day"></i> &nbsp; {{ launch.net | showDateOnly }}</p>
-      <p class="fs-5">
-        {{ launch.mission?.description }}
-      </p>
-      <div class="fs-5">
-        <span class="badge badge-secondary">
-          {{ launch.ismanned ? "Manned" : "Un-Manned" }}</span
-        >
-        &nbsp;
-        <span *ngIf="launch.mission" class="badge badge-info"> {{ launch.mission?.type }}</span> &nbsp;
-        <span [ngClass]="['badge','badge-'+launch.launchStatusColor]"> {{ launch.status.name }}</span>
-      </div>
-    </div>
-    <div class="col-12 col-md-5">
-      <figure>
+  <ng-container *ngFor="let launch of launchList">
+    <a class="row" [routerLink]="['/launches',launch.slug]">
+      <div class="col-12 col-md-5 g-0">
         <img
           [src]="launch.image"
           style="
             object-fit: cover !important;
-            height: 300px !important;
+            height: 250px !important;
             width: 100% !important;
           "
-          class="figure-img rounded shadow-3 mb-3"
+          class="rounded shadow-3"
           [alt]="launch.name"
         />
-        <figcaption class="figure-caption text-center">
-          {{ launch.name }}
-        </figcaption>
-      </figure>
-    </div>
-  </a>
+      </div>
+      <div
+        class="col-12 col-md-7 d-flex flex-column justify-content-center my-2"
+      >
+        <p class="h6">
+          <b>{{ launch?.name }} </b>
+        </p>
+        <p>
+          <i class="fas fa-calendar-day"></i> &nbsp;
+          {{ launch.net | showDateOnly }}
+        </p>
+        <p>
+          {{ launch.mission?.description }}
+        </p>
+        <div>
+          <span class="badge badge-secondary">
+            {{ launch.ismanned ? "Manned" : "Un-Manned" }}</span
+          >
+          &nbsp;
+          <span *ngIf="launch.mission" class="badge badge-info">
+            {{ launch.mission?.type }}</span
+          >
+          &nbsp;
+          <span [ngClass]="['badge', 'badge-' + launch.launchStatusColor]">
+            {{ launch.status.name }}</span
+          >
+        </div>
+      </div>
+    </a>
+    <hr />
+  </ng-container>
 </div>
